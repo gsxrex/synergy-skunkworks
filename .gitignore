@@ -1,0 +1,18 @@
+# default .gitignore for Synergy projects
+
+# debug and release build folders
+**/Debug
+**/Release
+
+# generated Synergy project content
+**/src/synergy_gen
+**/synergy
+**/synergy_cfg
+
+# debugger files
+**/*.jlink
+
+#####
+# e2 studio ignored files
+.metadata
+
