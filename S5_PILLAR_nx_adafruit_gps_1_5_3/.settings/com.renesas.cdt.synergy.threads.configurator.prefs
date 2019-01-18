@@ -1,0 +1,15 @@
+collapse/module.driver.uart_on_sci_uart.1665017365=false
+collapse/module.driver.uart_on_sci_uart.1714120566=false
+collapse/module.el.nxd.ip.761806226=true
+collapse/module.el.nxd.packet_pool.301900666=true
+collapse/module.el.nxd_common.1230940004=false
+collapse/module.el.nxd_crypto_generic.1169438437=false
+collapse/module.el.nxd_dns_client.1434845169=true
+collapse/module.el.nxd_mqtt_client.2042349554=true
+collapse/module.el.nxd_ppp_common.466884320=false
+collapse/module.el.nxd_tls_common.1141066894=false
+collapse/module.framework.sf_cellular_nsal_nx.1095511984=true
+collapse/module.framework.sf_cellular_qctlcatm1.1869218848=false
+collapse/module.framework.sf_comms_on_sf_uart_comms.1026104522=false
+collapse/module.framework.sf_el_nx_crypto.628437050=false
+eclipse.preferences.version=1

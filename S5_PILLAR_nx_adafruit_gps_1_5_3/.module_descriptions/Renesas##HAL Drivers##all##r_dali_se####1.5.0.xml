@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" ?>
+<synergyModuleDescription>
+    <config id="config.driver.r_dali_se" path="ssp_cfg/driver/r_dali_cfg.h" version="0">
+        <property default="config.driver.r_dali_se.param_checking_enable.bsp" display="Parameter Checking" id="config.driver.r_dali_se.param_checking_enable">
+            <option display="Default (BSP)" id="config.driver.r_dali_se.param_checking_enable.bsp" value="(BSP_CFG_PARAM_CHECKING_ENABLE)"/>
+            <option display="Enabled" id="config.driver.r_dali_se.param_checking_enable.enabled" value="(1)"/>
+            <option display="Disabled" id="config.driver.r_dali_se.param_checking_enable.disabled" value="(0)"/>
+        </property>
+        <content>#define R_DALI_CFG_PARAM_CHECKING_ENABLE ${config.driver.r_dali_se.param_checking_enable}
+        </content>
+    </config>   
+    <module config="config.driver.r_dali_se" display="Driver|Connectivity|${module.driver.r_dali.name} DALI2 SE Driver on r_dali" id="module.driver.r_dali_on_r_dali_se" version="1">
+        <constraint display="Module instances must have unique names">
+            "${interface.driver.r_dali.${module.driver.r_dali.name}}" === "1"
+        </constraint>
+
+    	<requires id="module.driver.r_dali.requires.timer" interface="interface.driver.timer_on_gpt" display="Add GPT HAL driver" >
+			<override property="module.driver.timer.mode" value="module.driver.timer.mode.mode_periodic"/>
+			<override property="module.driver.timer.period" value="833"/>
+			<override property="module.driver.timer.unit" value="module.driver.timer.unit.unit_period_usec"/>
+			<override property="module.driver.timer.duty_cycle" value="50"/>
+			<override property="module.driver.timer.duty_cycle_unit" value="module.driver.timer.unit.unit_percent"/>
+			<override property="module.driver.timer.autostart" value="module.driver.timer.autostart.false"/>
+			<override property="module.driver.timer.gtioca_output_enabled" value="module.driver.timer.gtioca_output_enabled.true"/>
+			<override property="module.driver.timer.gtioca_stop_level" value="module.driver.timer.gtioca_stop_level.pin_level_high"/>
+			<override property="module.driver.timer.gtiocb_output_enabled" value="module.driver.timer.gtiocb_output_enabled.false"/>
+			<override property="module.driver.timer.gtiocb_stop_level" value="module.driver.timer.gtiocb_stop_level.pin_level_high"/>
+			<override property="module.driver.timer.p_callback" value="dali_tx_callback"/>
+        </requires>
+    	<requires id="module.driver.r_dali.requires.input_capture" interface="interface.driver.input_capture" display="Add Input Capture HAL driver" >
+            <!-- <override property="module.driver.input_capture.p_callback" value= "${module.driver.input_capture.p_callback}"/> -->
+			<override property="module.driver.input_capture.autostart" value="module.driver.input_capture.autostart.false"/>
+			<override property="module.driver.input_capture.repetition" value="module.driver.input_capture.repetition.periodic"/>
+			<override property="module.driver.input_capture.p_callback" value="dali_rx_callback"/>
+			<override property="module.driver.input_capture.mode" value="module.driver.input_capture.mode.pulse_width"/>
+			<override property="module.driver.input_capture.signal_edge" value="module.driver.input_capture.signal_edge.falling"/>
+			<override property="module.driver.input_capture.clock_divider" value="module.driver.input_capture.clock_divider.div1"/>
+			<override property="module.driver.input_capture.enable_level" value="module.driver.input_capture.enable_level.none"/>
+        </requires>		
+		
+        <provides interface="interface.driver.r_dali" />
+        <provides interface="interface.driver.r_dali_on_r_dali_se" />
+        <provides interface="interface.driver.r_dali.${module.driver.r_dali.name}" />
+
+        <property id="module.driver.r_dali.name" display="Name" default="g_dali${_instance}">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.driver.r_dali.name}")</constraint>
+        </property>     
+
+        <property id="module.driver.r_dali.rx_pin" display="Receive pin ID" default="IOPORT_PORT_01_PIN_00">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.driver.r_dali.rx_pin}")</constraint>
+        </property>
+        <property id="module.driver.r_dali.transmission_timeout" display="Transmission timeout [100usec]" default="2000">
+            <constraint display="Value must be a non-negative integer">testInteger("${module.driver.r_dali.transmission_timeout}")  &amp;&amp; ("${module.driver.r_dali.transmission_timeout}" &gt;= 0)</constraint>
+        </property>
+        <property id="module.driver.r_dali.periodic_status_time" display="Periodic status transmission [100usec]" default="0">
+            <constraint display="Value must be a non-negative integer">testInteger("${module.driver.r_dali.periodic_status_time}")  &amp;&amp; ("${module.driver.r_dali.periodic_status_time}" &gt;= 0)</constraint>
+        </property>
+        <property id="module.driver.r_dali.p_callback" display="Callback" default="NULL">
+	    <constraint display="Name must be a valid C symbol">testSymbol("${module.driver.r_dali.p_callback}")</constraint>
+        </property>
+        <property id="module.driver.r_dali.collision_detection" display="Collision detection" default="module.driver.r_dali.collision_detection.on">
+            <option display="On"  id="module.driver.r_dali.collision_detection.on"  value="true"/>
+            <option display="Off" id="module.driver.r_dali.collision_detection.off" value="false"/>
+        </property>
+        <property id="module.driver.r_dali.strict_collision_detection" display="Strict Collision detection" default="module.driver.r_dali.strict_collision_detection.off">
+            <option display="On"  id="module.driver.r_dali.strict_collision_detection.on"  value="true"/>
+            <option display="Off" id="module.driver.r_dali.strict_collision_detection.off" value="false"/>
+        </property>
+        <property id="module.driver.r_dali.bit_timing_violation_detection" display="Bit timing violation detection" default="module.driver.r_dali.bit_timing_violation_detection.on">
+            <option display="On"  id="module.driver.r_dali.bit_timing_violation_detection.on"  value="true"/>
+            <option display="Off" id="module.driver.r_dali.bit_timing_violation_detection.off" value="false"/>
+        </property>
+        <property id="module.driver.r_dali.dtx_width_modulation" display="DTX width modulation" default="module.driver.r_dali.dtx_width_modulation.off">
+            <option display="On"  id="module.driver.r_dali.dtx_width_modulation.on"  value="true"/>
+            <option display="Off" id="module.driver.r_dali.dtx_width_modulation.off" value="false"/>
+        </property>
+        <property id="module.driver.r_dali.dtx_width_low" display="'low' time of DTX in usec [215..617]" default="396">
+            <constraint display="Value must be an positive integer">testInteger("${module.driver.r_dali.dtx_width_low}")  &amp;&amp; ("${module.driver.r_dali.dtx_width_low}" &gt;= 215) &amp;&amp; ("${module.driver.r_dali.dtx_width_low}" &lt;= 617)</constraint>
+        </property>
+        <property id="module.driver.r_dali.cd_accuracy" display="Collision detection accuracy [usec]" default="160">
+            <constraint display="Value must be a non-negative integer">testInteger("${module.driver.r_dali.cd_accuracy}")  &amp;&amp; ("${module.driver.r_dali.cd_accuracy}" &gt;= 0)</constraint>
+        </property>
+        <property id="module.driver.r_dali.btv_accuracy" display="Bit time detection accuracy [usec]" default="120">
+            <constraint display="Value must be a non-negative integer">testInteger("${module.driver.r_dali.btv_accuracy}")  &amp;&amp; ("${module.driver.r_dali.btv_accuracy}" &gt;= 0)</constraint>
+        </property>
+        <header>
+            extern const dali_instance_t ${module.driver.r_dali.name};      
+        </header>
+        <includes>
+            #include &quot;r_dali.h&quot;
+            #include &quot;r_dali_se.h&quot;
+            #include &quot;r_dali_api.h&quot;
+        </includes>
+        <declarations> 
+
+	    #ifndef ${module.driver.r_dali.p_callback} 
+	    void ${module.driver.r_dali.p_callback}(dali_frame_t * p_frame);
+	    #endif
+	    dali_instance_ctrl_t ${module.driver.r_dali.name}_ctrl; 
+	    dali_se_ctrl_t ${module.driver.r_dali.name}_se_ctrl; 
+		
+		static dali_api_cfg_t ${module.driver.r_dali.name}_cfg_extend =
+		{
+		  .p_se_ctrl = &amp;${module.driver.r_dali.name}_se_ctrl,
+		  .p_gpt_rx  = &amp;${module.driver.r_dali.requires.input_capture::module.driver.input_capture.name},
+		  .p_gpt_tx = &amp;${module.driver.r_dali.requires.timer::module.driver.timer.name},
+		  .cd_accuracy = ${module.driver.r_dali.cd_accuracy},
+		  .btv_accuracy = ${module.driver.r_dali.btv_accuracy},
+		  .gpio_rx = ${module.driver.r_dali.rx_pin},
+		};
+		
+        static const dali_cfg_t ${module.driver.r_dali.name}_cfg =
+        {
+		  .channel                        = 0,
+		  .p_callback                     = ${module.driver.r_dali.p_callback},
+		  .collision_detection            = ${module.driver.r_dali.collision_detection},
+		  .strict_collision_detection     = ${module.driver.r_dali.strict_collision_detection},
+		  .bit_timing_violation_detection = ${module.driver.r_dali.bit_timing_violation_detection},
+		  .dtx_width_modulation_enable    = ${module.driver.r_dali.dtx_width_modulation},
+		  .dtx_width_low                  = ${module.driver.r_dali.dtx_width_low},
+		  .periodic_status_time           = ${module.driver.r_dali.periodic_status_time},
+		  .transmission_timeout           = ${module.driver.r_dali.transmission_timeout}U,
+		  .fe_ipl                         = 0,
+		  .sd_ipl                         = 0,
+		  .bp_ipl                         = 0,
+		  .cl_ipl                         = 0,
+		  .p_extend						  = &amp;${module.driver.r_dali.name}_cfg_extend
+	    };
+
+	    /* Instance structure to use this module. */
+	    const dali_instance_t ${module.driver.r_dali.name} =
+	    {
+		.p_ctrl = (dali_ctrl_t *)(&amp;${module.driver.r_dali.name}_ctrl),
+		.p_cfg =  &amp;${module.driver.r_dali.name}_cfg,
+		.p_api =  &amp;g_r_dali_on_r_dali_se
+	    };    
+
+        </declarations>
+        <init>
+
+        </init>
+    </module>
+</synergyModuleDescription>

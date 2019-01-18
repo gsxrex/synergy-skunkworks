@@ -1,0 +1,772 @@
+Synergy Configuration
+  Board "S5D9_PILLAR_ARDUINO_MODULE"
+  R7FS5D97E2A01CLK
+    part_number: R7FS5D97E2A01CLK
+    rom_size_bytes: 2097152
+    ram_size_bytes: 655360
+    data_flash_size_bytes: 65536
+    package_style: LGA
+    package_pins: 145
+    
+  S5D9
+    series: 5
+    
+  S5D9 Family
+    OFS0 register settings: Select fields below
+         IWDT Start Mode: IWDT is Disabled
+         IWDT Timeout Period: 2048 cycles
+         IWDT Dedicated Clock Frequency Divisor: 128
+         IWDT Window End Position:  0% (no window end position)
+         IWDT Window Start Position: 100% (no window start position)
+         IWDT Reset Interrupt Request Select: Reset is enabled
+         IWDT Stop Control: Stop counting when in Sleep, Snooze mode, or Software Standby
+         WDT Start Mode Select: Stop WDT after a reset (register-start mode)
+         WDT Timeout Period: 16384 cycles
+         WDT Clock Frequency Division Ratio: 128
+         WDT Window End Position:  0% (no window end position)
+         WDT Window Start Position: 100% (no window start position)
+         WDT Reset Interrupt Request: Reset
+         WDT Stop Control: Stop counting when entering Sleep mode
+    OFS1 register settings: Select fields below
+         Voltage Detection 0 Circuit Start: Voltage monitor 0 reset is disabled after reset
+         Voltage Detection 0 Level: 2.80 V
+         HOCO OScillation Enable: HOCO oscillation is disabled after reset
+    MPU - Enable or disable PC Region 0: Disabled
+    MPU - PC0 Start: 0xFFFFFFFC
+    MPU - PC0 End: 0xFFFFFFFF
+    MPU - Enable or disable PC Region 1: Disabled
+    MPU - PC1 Start: 0xFFFFFFFC
+    MPU - PC1 End: 0xFFFFFFFF
+    MPU - Enable or disable Memory Region 0: Disabled
+    MPU - Memory Region 0 Start: 0x00FFFFFC
+    MPU - Memory Region 0 End: 0x00FFFFFF
+    MPU - Enable or disable Memory Region 1: Disabled
+    MPU - Memory Region 1 Start: 0x200FFFFC
+    MPU - Memory Region 1 End: 0x200FFFFF
+    MPU - Enable or disable Memory Region 2: Disabled
+    MPU - Memory Region 2 Start: 0x407FFFFC
+    MPU - Memory Region 2 End: 0x407FFFFF
+    MPU - Enable or disable Memory Region 3: Disabled
+    MPU - Memory Region 3 Start: 0x400DFFFC
+    MPU - Memory Region 3 End: 0x400DFFFF
+    
+  Synergy Common
+    Main stack size (bytes): 0x1000
+    Process stack size (bytes): 0
+    Heap size (bytes) - A minimum of 4K (0x1000) is required if standard library functions are to be used.: 0x1000
+    MCU Vcc (mV): 3300
+    Parameter checking: Enabled
+    Assert Failures: Return SSP_ERR_ASSERTION
+    Error Log: No Error Log
+    ID Code Mode: Unlocked (Ignore ID)
+    ID Code (32 Hex Characters): FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+    
+  Clocks
+    XTAL 12000000Hz
+    PLL Src: XTAL
+    HOCO 20MHz
+    PLL Div /1
+    PLL Mul x20.0
+    Clock Src: PLL
+    ICLK Div /2
+    PCLKA Div /2
+    PCLKB Div /4
+    PCLKC Div /4
+    PCLKD Div /2
+    SDCLKout On
+    BCLK Div /2
+    BCK/2
+    UCLK Div /5
+    FCLK Div /4
+    
+  Pin Configurations
+    S5D9_PILLAR_Board.pincfg -> g_bsp_pin_cfg
+      AVCC0 L7 ADC_AVCC0 - - - - - - - - 
+      AVSS0 L8 ADC_AVSS0 - - - - - - - - 
+      P000 L10 GPIO VM1010_WAKE - None "Input mode" - - "ADC0: AN00; CMP0: IVCMP2; IRQ0: IRQ06" "rising edge - latches high" 
+      P001 N10 ADC0_AN01 VM1010_MIC - - "Analog mode" - - "ADC0: AN01; CMP0: IVCMP2; IRQ0: IRQ07" "Microphone Output" 
+      P002 M10 - - - - Disabled - - "ADC0: AN02; CMP0: IVCMP2; IRQ0: IRQ08" - 
+      P003 K10 ADC0_PGAVSS0 - - - "Analog mode" - - "ADC0: AN07; ADC0: PGAVSS0" "Tied to Ground for use with Mic input & PGA" 
+      P004 K9 - - - - Disabled - - "ADC1: AN00; CMP0: IVCMP2; IRQ0: IRQ09" - 
+      P005 K8 - - - - Disabled - - "ADC1: AN01; CMP0: IVCMP2; IRQ0: IRQ10" - 
+      P006 L9 - - - - Disabled - - "ADC1: AN02; CMP0: IVCMP2; IRQ0: IRQ11" - 
+      P007 K7 - - - - Disabled - - "ADC1: AN07; ADC1: PGAVSS0" - 
+      P008 N9 - - - - Disabled - - "ADC0: AN03; IRQ0: IRQ12" - 
+      P009 M9 - - - - Disabled - - "ADC0: AN04; IRQ0: IRQ13" - 
+      P014 N6 - - - - Disabled - - "ADC0: AN05; ADC1: AN05; CMP0: IVREF3; DAC120: DA" - 
+      P015 M6 - - - - Disabled - - "ADC0: AN06; ADC1: AN06; CMP0: IVCMP1; DAC121: DA; IRQ0: IRQ13" - 
+      P100 N1 IIC1_SCL SCL1 Medium None "Peripheral mode" CMOS None "AGT0: AGTIO; BUS0: D0_DQ0; GLCDC0: LCD_EXTCLK; GPT5: GTIOCB; IIC1: SCL; IRQ0: IRQ02; KINT0: KRM0; POEG0: GTETRG; SCI0: RXD_MISO; SCI0: SCL; SCI1: SCK; SPI0: MISO" "Grove B J4\r\nArduino IOH IO10" 
+      P101 M2 IIC1_SDA SDA1 Medium None "Peripheral mode" CMOS None "AGT0: AGTEE; BUS0: D1_DQ1; GLCDC0: LCD_CLK; GPT5: GTIOCA; IIC1: SDA; IRQ0: IRQ01; KINT0: KRM1; POEG1: GTETRG; SCI0: SDA; SCI0: TXD_MOSI; SCI1: CTS_RTS_SS; SPI0: MOSI" "Grove B J4\r\nArduino IOH IO11" 
+      P102 M1 GPIO P1_2/IO6 Low - "Output mode (Initial High)" CMOS None "ADC0: ADTRG; AGT0: AGTO; BUS0: D2_DQ2; CAN0: CRX; GLCDC0: LCD_TCON0; GPT2: GTIOCB; KINT0: KRM2; OPS0: GTOWLO; SCI0: SCK; SPI0: RSPCK" "Arduino IOL\r\nIO6" 
+      P103 L1 GPIO P1_3/SS0 Low - "Output mode (Initial High)" CMOS None "BUS0: D3_DQ3; CAN0: CTX; GLCDC0: LCD_TCON1; GPT2: GTIOCA; KINT0: KRM3; OPS0: GTOWUP; SCI0: CTS_RTS_SS; SPI0: SSL0" "Arduino IOH\r\nIO10" 
+      P104 L3 SCI8_RXD_MISO - Low None "Peripheral mode" CMOS None "BUS0: D4_DQ4; GLCDC0: LCD_TCON2; GPT1: GTIOCB; IRQ0: IRQ01; KINT0: KRM4; POEG1: GTETRG; SCI8: RXD_MISO; SCI8: SCL; SPI0: SSL1" - 
+      P105 J4 SCI8_TXD_MOSI - Low None "Peripheral mode" CMOS None "BUS0: D5_DQ5; GLCDC0: LCD_TCON3; GPT1: GTIOCA; IRQ0: IRQ00; KINT0: KRM5; POEG0: GTETRG; SCI8: SDA; SCI8: TXD_MOSI; SPI0: SSL2" - 
+      P106 K3 - - - - Disabled - - "AGT0: AGTOB; BUS0: D6_DQ6; GLCDC0: LCD_DATA00; GPT8: GTIOCB; KINT0: KRM6; SCI8: SCK; SPI0: SSL3" - 
+      P107 J3 GPIO P1_7/SS8 Low - "Output mode (Initial High)" CMOS None "AGT0: AGTOA; BUS0: D7_DQ7; GLCDC0: LCD_DATA01; GPT8: GTIOCA; KINT0: KRM7; SCI8: CTS_RTS_SS" "Arudino IOH\r\nIO10" 
+      P108 A1 DEBUG0_SWDIO TMS/SWDIO Low - "Peripheral mode" CMOS None "DEBUG0: SWDIO; DEBUG0: TMS; GPT0: GTIOCB; OPS0: GTOULO; SCI9: CTS_RTS_SS; SPI1: SSL0" - 
+      P109 D4 - - - - Disabled - - "CAN1: CTX; CGC0: CLKOUT; DEBUG0: SWO; DEBUG0: TDO; GPT1: GTIOCA; OPS0: GTOVUP; SCI9: SDA; SCI9: TXD_MOSI; SPI1: MOSI" - 
+      P110 B1 GPIO P1_10/IO9 - None "Input mode" - None "CAN1: CRX; CMP0: VCOUT; DEBUG0: TDI; GPT1: GTIOCB; IRQ0: IRQ03; OPS0: GTOVLO; SCI2: CTS_RTS_SS; SCI9: RXD_MISO; SCI9: SCL; SPI1: MISO" "Arduino IOH\r\nIO9" 
+      P111 C2 GPIO P1_11/IO8 Low None "Output mode (Initial Low)" CMOS None "BUS0: A05; GLCDC0: LCD_DATA12; GPT3: GTIOCA; IRQ0: IRQ04; SCI2: SCK; SCI9: SCK; SPI1: RSPCK" "Arduino IOH\r\nIO8" 
+      P112 D3 - - - - Disabled - - "BUS0: A04; GLCDC0: LCD_DATA11; GPT3: GTIOCB; SCI1: SCK; SCI2: SDA; SCI2: TXD_MOSI; SPI1: SSL0; SSI0: SSISCK" - 
+      P113 C1 GPIO IO7 - - "Input mode" - None "BUS0: A03; GLCDC0: LCD_DATA10; GPT2: GTIOCA; SCI2: RXD_MISO; SCI2: SCL; SSI0: SSIWS" "Arduino IOL\r\nIO7" 
+      P114 E4 - - - - Disabled - - "BUS0: A02; GLCDC0: LCD_DATA09; GPT2: GTIOCB; SSI0: SSIRXD" - 
+      P115 E3 - - - - Disabled - - "BUS0: A01; GLCDC0: LCD_DATA08; GPT4: GTIOCA; SSI0: SSITXD" - 
+      P200 C8 - - - - Disabled - - "IRQ0: NMI" - 
+      P201 B6 GPIO P2_1/MD - - "Input mode" - None - "User SW" 
+      P202 C9 SPI1_MISO P2_2/MISOB_A/RXD9_A High None "Peripheral mode" CMOS None "BUS0: WR1_BC1; CAN0: CRX; ETHERC0: ERXD2; GLCDC0: LCD_TCON3; GPT5: GTIOCB; IRQ0: IRQ03; SCI2: SCK; SCI9: RXD_MISO; SCI9: SCL; SDHI0: DAT6; SPI1: MISO" "PMOD J5" 
+      P203 A9 SPI1_MOSI P2_3/MOSIB_A/TXD9_A High None "Peripheral mode" CMOS None "BUS0: A19; CAN0: CTX; CTSU0: TSCAP; ETHERC0: COL; GPT5: GTIOCA; IRQ0: IRQ02; SCI2: CTS_RTS_SS; SCI9: SDA; SCI9: TXD_MOSI; SDHI0: DAT5; SPI1: MOSI" "PMOD J5" 
+      P204 C10 SPI1_RSPCK P2_4/RSPCKB_A/SCK9_A High - "Peripheral mode" CMOS None "AGT1: AGTIO; BUS0: A18; CAC0: CACREF; CTSU0: TS00; ETHERC0: RX_DV; GPT4: GTIOCB; IIC0: SCL; OPS0: GTIW; SCI4: SCK; SCI9: SCK; SDHI0: DAT4; SPI1: RSPCK; SSI1: SSISCK; USBFS0: OVRCURB" "PMOD J5" 
+      P205 A10 GPIO P2_5/SSLB0_A/CTS9_A Medium None "Output mode (Initial High)" CMOS None "AGT1: AGTO; BUS0: A16; CGC0: CLKOUT; CTSU0: TSCAP; ETHERC0: WOL; ETHERC0: WOL; GPT4: GTIOCA; IIC1: SCL; IRQ0: IRQ01; OPS0: GTIV; SCI4: SDA; SCI4: TXD_MOSI; SCI9: CTS_RTS_SS; SDHI0: DAT3; SPI1: SSL0; SSI1: SSIWS; USBFS0: OVRCURA" "PMOD J5" 
+      P206 B10 - - - - Disabled - - "BUS0: WAIT; CTSU0: TS01; ETHERC0: LINKSTA; ETHERC0: LINKSTA; IIC1: SDA; IRQ0: IRQ00; OPS0: GTIU; SCI4: RXD_MISO; SCI4: SCL; SDHI0: DAT2; SPI1: SSL1; SSI1: SSIDATA; USBFS0: VBUSEN" - 
+      P207 C11 QSPI0_QSSL P2_7/QSSL High - "Peripheral mode" CMOS None "BUS0: A17; CTSU0: TS02; GLCDC0: LCD_DATA23; QSPI0: QSSL; SPI1: SSL2" - 
+      P208 A6 QSPI0_QIO3 P2_8/QIO3 High - "Peripheral mode" CMOS None "ETHERC0: LINKSTA; ETHERC0: LINKSTA; GLCDC0: LCD_DATA18; OPS0: GTOVLO; QSPI0: QIO3; SDHI0: DAT0; TRACE0: TDATA3" - 
+      P209 A7 QSPI0_QIO2 P2_9/QIO2 High - "Peripheral mode" CMOS None "ETHERC0: EXOUT; ETHERC0: EXOUT; GLCDC0: LCD_DATA19; OPS0: GTOVUP; QSPI0: QIO2; SDHI0: WP; TRACE0: TDATA2" - 
+      P210 B7 QSPI0_QIO1 P2_10/QIO1 High - "Peripheral mode" CMOS None "ETHERC0: WOL; ETHERC0: WOL; GLCDC0: LCD_DATA20; OPS0: GTIW; QSPI0: QIO1; SDHI0: CD; TRACE0: TDATA1" - 
+      P211 B8 QSPI0_QIO0 P2_11/QIO0 High - "Peripheral mode" CMOS None "ETHERC0: MDIO; ETHERC0: MDIO; GLCDC0: LCD_DATA21; OPS0: GTIV; QSPI0: QIO0; SDHI0: CMD; TRACE0: TDATA0" - 
+      P212 G13 - - - - Disabled - - "AGT1: AGTEE; CGC0: EXTAL; GPT0: GTIOCB; IRQ0: IRQ03; POEG3: GTETRG; SCI1: RXD_MISO; SCI1: SCL" - 
+      P213 G12 - - - - Disabled - - "ADC1: ADTRG; CGC0: XTAL; GPT0: GTIOCA; IRQ0: IRQ02; POEG2: GTETRG; SCI1: SDA; SCI1: TXD_MOSI" - 
+      P214 A8 QSPI0_QSPCLK P2_14/QSPCLK High - "Peripheral mode" CMOS None "ETHERC0: MDC; ETHERC0: MDC; GLCDC0: LCD_DATA22; OPS0: GTIU; QSPI0: QSPCLK; SDHI0: CLK; TRACE0: TCLK" - 
+      P300 B2 DEBUG0_SWCLK TCK/SWCLK Low - "Peripheral mode" CMOS None "DEBUG0: SWCLK; DEBUG0: TCK; GPT0: GTIOCA; OPS0: GTOUUP; SPI1: SSL1" - 
+      P301 C3 - - - - Disabled - - "AGT0: AGTIO; BUS0: A06; GLCDC0: LCD_DATA13; GPT4: GTIOCB; IRQ0: IRQ06; OPS0: GTOULO; SCI2: RXD_MISO; SCI2: SCL; SCI9: CTS_RTS_SS; SPI1: SSL2" - 
+      P302 A2 - - - - Disabled - - "BUS0: A07; GLCDC0: LCD_DATA14; GPT4: GTIOCA; IRQ0: IRQ05; OPS0: GTOUUP; SCI2: SDA; SCI2: TXD_MOSI; SPI1: SSL3" - 
+      P303 D5 - - - - Disabled - - "BUS0: A08; GLCDC0: LCD_DATA15; GPT7: GTIOCB" - 
+      P304 C4 - - - - Disabled - - "BUS0: A09; GLCDC0: LCD_DATA16; GPT7: GTIOCA; IRQ0: IRQ09; OPS0: GTOWLO; SCI6: RXD_MISO; SCI6: SCL" - 
+      P305 D6 - - - - Disabled - - "BUS0: A10; GLCDC0: LCD_DATA17; IRQ0: IRQ08; OPS0: GTOWUP; QSPI0: QSPCLK; SCI6: SDA; SCI6: TXD_MOSI" - 
+      P306 B4 GPIO P3_6 Low - "Output mode (Initial High)" CMOS None "BUS0: A11; GLCDC0: LCD_DATA18; OPS0: GTOULO; QSPI0: QSSL; SCI6: SCK" - 
+      P307 A4 GPIO - Low - "Output mode (Initial High)" CMOS None "BUS0: A12; GLCDC0: LCD_DATA19; OPS0: GTOUUP; QSPI0: QIO0; SCI6: CTS_RTS_SS" "PMOD J5" 
+      P308 C5 - - - - Disabled - - "BUS0: A13; GLCDC0: LCD_DATA20; QSPI0: QIO1" - 
+      P309 A5 GPIO - Low - "Output mode (Initial High)" CMOS None "BUS0: A14; GLCDC0: LCD_DATA21; QSPI0: QIO2; SCI3: RXD_MISO; SCI3: SCL" "PMOD J5" 
+      P310 D7 - - - - Disabled - - "AGT1: AGTEE; BUS0: A15; GLCDC0: LCD_DATA22; QSPI0: QIO3; SCI3: SDA; SCI3: TXD_MOSI" - 
+      P311 B5 - - - - Disabled - - "AGT1: AGTOB; BUS0: CS2_RAS; GLCDC0: LCD_DATA23; SCI3: SCK" - 
+      P312 C6 - - - - Disabled - - "AGT1: AGTOA; BUS0: CS3_CAS; SCI3: CTS_RTS_SS" - 
+      P313 B9 - - - - Disabled - - "BUS0: A20; ETHERC0: ERXD3; GLCDC0: LCD_TCON2; SDHI0: DAT7" - 
+      P400 N13 GPIO P4_0/IRQ0-ETH0_IRQ# - IRQ0 "Input mode" - None "ADC1: ADTRG; AGT1: AGTIO; ETHERC0: WOL; ETHERC0: WOL; GPT6: GTIOCA; IIC0: SCL; IRQ0: IRQ00; SCI4: SCK; SCI7: SCK; SSI: AUDIO_CLK" - 
+      P401 L11 RMII_MDC P4_1/ETH0_MDC High None "Peripheral mode" CMOS None "CAN0: CTX; ETHERC0: MDC; ETHERC0: MDC; GPT6: GTIOCB; IIC0: SDA; IRQ0: IRQ05; POEG0: GTETRG; SCI4: CTS_RTS_SS; SCI7: SDA; SCI7: TXD_MOSI" - 
+      P402 M13 RMII_MDIO P4_2/ETH0_MDIO High None "Peripheral mode" CMOS None "AGT0: AGTIO; AGT1: AGTIO; CAC0: CACREF; CAN0: CRX; ETHERC0: MDIO; ETHERC0: MDIO; IRQ0: IRQ04; PDC0: VSYNC; RTC0: RTCIC0; SCI7: RXD_MISO; SCI7: SCL; SSI: AUDIO_CLK" - 
+      P403 K11 - - - - Disabled - - "AGT0: AGTIO; AGT1: AGTIO; ETHERC0: LINKSTA; ETHERC0: LINKSTA; GPT3: GTIOCA; PDC0: PIXD7; RTC0: RTCIC1; SCI7: CTS_RTS_SS; SDHI1: DAT7; SSI0: SSISCK" - 
+      P404 L12 GPIO P4_4/EHT0_RST# Low - "Output mode (Initial High)" CMOS None "ETHERC0: EXOUT; ETHERC0: EXOUT; GPT3: GTIOCB; PDC0: PIXD6; RTC0: RTCIC2; SDHI1: DAT6; SSI0: SSIWS" - 
+      P405 L13 RMII_TXD_EN P4_5/ETH0_TXD_EN High - "Peripheral mode" CMOS None "ETHERC0: TX_EN; ETHERC0: TXD_EN; GPT1: GTIOCA; PDC0: PIXD5; SDHI1: DAT5; SSI0: SSITXD" - 
+      P406 J10 RMII_TXD1 P4_6/ETH0_TXD1 High - "Peripheral mode" CMOS None "ETHERC0: RX_ER; ETHERC0: TXD1; GPT1: GTIOCB; PDC0: PIXD4; SDHI1: DAT4; SPI1: SSL3; SSI0: SSIRXD" - 
+      P407 A13 USBFS0_VBUS P4_7/USBF_VBUS Low - "Peripheral mode" CMOS None "ADC0: ADTRG; AGT0: AGTIO; CTSU0: TS03; ETHERC0: EXOUT; ETHERC0: EXOUT; IIC0: SDA; RTC0: RTCOUT; SCI4: CTS_RTS_SS; SPI1: SSL3; USBFS0: VBUS" - 
+      P408 D10 - - - - Disabled - - "CTSU0: TS04; ETHERC0: CRS; ETHERC0: CRS_DV; GPT10: GTIOCB; IIC0: SCL; IRQ0: IRQ07; OPS0: GTOWLO; PDC0: PIXCLK; SCI3: RXD_MISO; SCI3: SCL; USBFS0: ID" - 
+      P409 B13 IRQ0_IRQ06 P4_9/IRQ6 - IRQ6 "IRQ mode" - - "CTSU0: TS05; ETHERC0: RX_CLK; ETHERC0: RX_ER; GPT10: GTIOCA; IRQ0: IRQ06; OPS0: GTOWUP; PDC0: HSYNC; SCI3: SDA; SCI3: TXD_MOSI; USBFS0: EXICEN" "PMOD J5" 
+      P410 C12 IRQ0_IRQ05 - - IRQ5 "IRQ mode" - - "AGT1: AGTOB; CTSU0: TS06; ETHERC0: ERXD0; ETHERC0: RXD1; GPT9: GTIOCB; IRQ0: IRQ05; OPS0: GTOVLO; PDC0: PIXD0; SCI0: RXD_MISO; SCI0: SCL; SCI3: SCK; SDHI0: DAT1; SPI0: MISO" - 
+      P411 D11 - - - - Disabled - - "AGT1: AGTOA; CTSU0: TS07; ETHERC0: ERXD1; ETHERC0: RXD0; GPT9: GTIOCA; IRQ0: IRQ04; OPS0: GTOVUP; PDC0: PIXD1; SCI0: SDA; SCI0: TXD_MOSI; SCI3: CTS_RTS_SS; SDHI0: DAT0; SPI0: MOSI" - 
+      P412 C13 GPIO - Medium - "Output mode (Initial High)" CMOS None "AGT1: AGTEE; CTSU0: TS08; ETHERC0: ETXD0; ETHERC0: REF50CK; OPS0: GTOULO; PDC0: PIXD2; SCI0: SCK; SDHI0: CMD; SPI0: RSPCK" "PMOD J5" 
+      P413 E10 - - - - Disabled - - "CTSU0: TS09; ETHERC0: ETXD1; ETHERC0: TXD0; OPS0: GTOUUP; PDC0: PIXD3; SCI0: CTS_RTS_SS; SDHI0: CLK; SPI0: SSL0" - 
+      P414 D12 GPIO P4_14/MODE Low None "Output mode (Initial High)" CMOS None "CTSU0: TS10; ETHERC0: RX_ER; ETHERC0: TXD1; GPT0: GTIOCB; IRQ0: IRQ09; PDC0: PIXD4; SDHI0: WP; SPI0: SSL1" "VM1010 Mode Pin\r\nHigh - Wake on Sound\r\nLow - Normal" 
+      P415 E11 - - - - Disabled - - "CTSU0: TS11; ETHERC0: TX_EN; ETHERC0: TXD_EN; GPT0: GTIOCA; IRQ0: IRQ08; PDC0: PIXD5; SDHI0: CD; SPI0: SSL2; USBFS0: VBUSEN" - 
+      P500 K4 ADC0_AN16 P5_0/AN016 - - "Analog mode" - - "ADC0: AN16; AGT0: AGTOA; CMP0: IVREF0; GPT11: GTIOCA; OPS0: GTIU; QSPI0: QSPCLK; SDHI1: CLK; USBFS0: VBUSEN" "Arduino AD3" 
+      P501 M4 ADC1_AN16 P5_1/SDA5/AN116 - - "Analog mode" - - "ADC1: AN16; AGT0: AGTOB; CMP0: IVREF1; GPT11: GTIOCB; IRQ0: IRQ11; OPS0: GTIV; QSPI0: QSSL; SCI5: SDA; SCI5: TXD_MOSI; SDHI1: CMD; USBFS0: OVRCURA" "Arduino AD4" 
+      P502 L4 ADC0_AN17 P5_2/SCL5/AN017 - - "Analog mode" - - "ADC0: AN17; CMP0: IVCMP0; GPT12: GTIOCA; IRQ0: IRQ12; OPS0: GTIW; QSPI0: QIO0; SCI5: RXD_MISO; SCI5: SCL; SDHI1: DAT0; USBFS0: OVRCURB" "Arduino AD5" 
+      P503 K5 ADC1_AN17 P5_3/AN117 - - "Analog mode" - - "ADC1: AN17; GPT12: GTIOCB; POEG2: GTETRG; QSPI0: QIO1; SCI5: SCK; SCI6: CTS_RTS_SS; SDHI1: DAT1; USBFS0: EXICEN" "Arduino AD2" 
+      P504 L5 ADC0_AN18 P5_4/AN018 - - "Analog mode" - - "ADC0: AN18; BUS0: ALE; GPT13: GTIOCA; POEG3: GTETRG; QSPI0: QIO2; SCI5: CTS_RTS_SS; SCI6: SCK; SDHI1: DAT2; USBFS0: ID" "Arduino AD1" 
+      P505 K6 SCI6_RXD_MISO P5_5/SCL6/RXD6/AN118 Low None "Peripheral mode" CMOS None "ADC1: AN18; GPT13: GTIOCB; IRQ0: IRQ14; QSPI0: QIO3; SCI6: RXD_MISO; SCI6: SCL; SDHI1: DAT3" "Grove A J3-1" 
+      P506 L6 SCI6_TXD_MOSI P5_6/SDA6/TXD6/AN019 High None "Peripheral mode" CMOS None "ADC0: AN19; IRQ0: IRQ15; SCI6: SDA; SCI6: TXD_MOSI; SDHI1: CD" "Grove A J3-2" 
+      P508 N4 ADC0_AN20 P5_8/AN020 - - "Analog mode" - - "ADC0: AN20; SCI5: SCK; SCI6: SCK" "Arudino AD0" 
+      P511 M12 IIC2_SDA P5_11/SDA2 Medium None "Peripheral mode" CMOS None "CAN1: CRX; GPT0: GTIOCB; IIC2: SDA; IRQ0: IRQ15; PDC0: PCKO; SCI4: RXD_MISO; SCI4: SCL" "On board sensor bus" 
+      P512 M11 IIC2_SCL P5_12/SCL2 Medium None "Peripheral mode" CMOS None "CAN1: CTX; GPT0: GTIOCA; IIC2: SCL; IRQ0: IRQ14; PDC0: VSYNC; SCI4: SDA; SCI4: TXD_MOSI" "On board sensor bus" 
+      P600 H4 - - - - Disabled - - "BUS0: RD; CAC0: CACREF; CGC0: CLKOUT; GLCDC0: LCD_DATA02; GPT6: GTIOCB; SCI9: SCK" - 
+      P601 J2 GPIO P6_1/IO9 Low - "Output mode (Initial High)" CMOS None "BUS0: WR_WR0_DQM0; GLCDC0: LCD_DATA03; GPT6: GTIOCA; SCI9: RXD_MISO; SCI9: SCL" "Arduino IOL" 
+      P602 J1 GPIO P6_2/IO5 Low - "Output mode (Initial Low)" CMOS None "BUS0: BCLK_SDCLK; GLCDC0: LCD_DATA04; GPT7: GTIOCB; SCI9: SDA; SCI9: TXD_MOSI" "Arudino IOL\r\nIO5" 
+      P603 H3 - - - - Disabled - - "BUS0: D13_DQ13; GPT7: GTIOCA; SCI9: CTS_RTS_SS" - 
+      P604 G4 - - - - Disabled - - "BUS0: D12_DQ12; GPT8: GTIOCB" - 
+      P605 H2 - - - - Disabled - - "BUS0: D11_DQ11; GPT8: GTIOCA" - 
+      P608 F4 - - - - Disabled - - "BUS0: A00_BC0_DQM1; GLCDC0: LCD_DATA07; GPT4: GTIOCB" - 
+      P609 E2 GPIO P6_9/IO4 - - "Input mode" - None "BUS0: CS1_CKE; CAN1: CTX; GLCDC0: LCD_DATA06; GPT5: GTIOCA" "Arduino IOL\r\nIO4" 
+      P610 F3 - - - - Disabled - - "BUS0: CS0_WE; CAN1: CRX; GLCDC0: LCD_DATA05; GPT5: GTIOCB" - 
+      P611 E1 SCI7_CTS_RTS_SS P6_11/CTS7 Low - "Peripheral mode" CMOS None "BUS0: SDCS; CAC0: CACREF; CGC0: CLKOUT; SCI7: CTS_RTS_SS" "Arduino IOL\r\nIO3" 
+      P612 F2 GPIO P6_12/IO2 - - "Input mode" - None "BUS0: D8_DQ8; SCI7: SCK" "Arduino IOL\r\nIO2" 
+      P613 F1 SCI7_TXD_MOSI P6_13/TXD7 High - "Peripheral mode" CMOS None "BUS0: D9_DQ9; SCI7: SDA; SCI7: TXD_MOSI" "Arduino IOL\r\nIO1" 
+      P614 G3 SCI7_RXD_MISO P6_14/RXD7 Low - "Peripheral mode" CMOS None "BUS0: D10_DQ10; SCI7: RXD_MISO; SCI7: SCL" "Arduino IOL\r\nIO0" 
+      P700 H10 RMII_TXD0 P7_0/ETH0_TXD0 High - "Peripheral mode" CMOS None "ETHERC0: ETXD1; ETHERC0: TXD0; GPT5: GTIOCA; PDC0: PIXD3; SDHI1: DAT3; SPI1: MISO" - 
+      P701 K12 RMII_REF50CK P7_1/ETH0_REF50CK0 High - "Peripheral mode" CMOS None "ETHERC0: ETXD0; ETHERC0: REF50CK; GPT5: GTIOCB; PDC0: PIXD2; SDHI1: DAT2; SPI1: MOSI" - 
+      P702 K13 RMII_RXD0 P7_2/ETH0_RXD0 High - "Peripheral mode" CMOS None "ETHERC0: ERXD1; ETHERC0: RXD0; GPT6: GTIOCA; PDC0: PIXD1; SDHI1: DAT1; SPI1: RSPCK" - 
+      P703 J11 RMII_RXD1 P7_3/ETH0_RXD1 High - "Peripheral mode" CMOS None "CMP0: VCOUT; ETHERC0: ERXD0; ETHERC0: RXD1; GPT6: GTIOCB; PDC0: PIXD0; SDHI1: DAT0; SPI1: SSL0" - 
+      P704 H11 RMII_RX_ER P7_4/ETH0_RX_ER High - "Peripheral mode" CMOS None "AGT0: AGTO; CAN0: CTX; ETHERC0: RX_CLK; ETHERC0: RX_ER; PDC0: HSYNC; SDHI1: CLK; SPI1: SSL1" - 
+      P705 G11 RMII_CRS_DV P7_5/ETH0_CRS_DV High - "Peripheral mode" CMOS None "AGT0: AGTIO; CAN0: CRX; ETHERC0: CRS; ETHERC0: CRS_DV; PDC0: PIXCLK; SDHI1: CMD; SPI1: SSL2" - 
+      P708 D13 GPIO P7_8/LED1 Low None "Output mode (Initial Low)" CMOS None "CAC0: CACREF; CTSU0: TS12; ETHERC0: ETXD3; IRQ0: IRQ11; PDC0: PCKO; SCI1: RXD_MISO; SCI1: SCL; SPI0: SSL3; SSI: AUDIO_CLK" "Green Led" 
+      P709 F10 GPIO P7_9/LED2 Low None "Output mode (Initial Low)" CMOS None "CTSU0: TS13; ETHERC0: ETXD2; IRQ0: IRQ10; SCI1: SDA; SCI1: TXD_MOSI" "Yellow Led" 
+      P710 E12 GPIO P7_10/LED3 Low - "Output mode (Initial Low)" CMOS None "CTSU0: TS14; ETHERC0: TX_ER; SCI1: SCK" "Red Led" 
+      P711 E13 GPIO - Low - "Output mode (Initial Low)" CMOS None "AGT0: AGTEE; CTSU0: TS15; ETHERC0: TX_CLK; SCI1: CTS_RTS_SS" - 
+      P712 F11 - - - - Disabled - - "AGT0: AGTOB; CTSU0: TS16; GPT2: GTIOCB" - 
+      P713 G10 - - - - Disabled - - "AGT0: AGTOA; CTSU0: TS17; GPT2: GTIOCA" - 
+      P800 L2 - - - - Disabled - - "BUS0: D14_DQ14" - 
+      P801 N2 - - - - Disabled - - "BUS0: D15_DQ15; SDHI1: DAT4" - 
+      RES C7 - - - - - - - - - 
+      USBDM A12 USBFS0_USBDM - - - - - - - - 
+      USBDP B12 USBFS0_USBDP - - - - - - - - 
+      VBAT J12 - - - - - - - - - 
+      VCC B3 - - - - - - - - - 
+      VCC D8 - - - - - - - - - 
+      VCC N3 - - - - - - - - - 
+      VCC K2 - - - - - - - - - 
+      VCC N5 - - - - - - - - - 
+      VCC F13 - - - - - - - - - 
+      VCC G1 - - - - - - - - - 
+      VCC D2 - - - - - - - - - 
+      VCC N12 - - - - - - - - - 
+      VCCUSB A11 USBFS0_VCCUSB - - - - - - - - 
+      VCL J13 - - - - - - - - - 
+      VCL1 H1 - - - - - - - - - 
+      VREFH N7 ADC_VREFH - - - - - - - - 
+      VREFH0 N8 ADC_VREFH0 - - - - - - - - 
+      VREFL M7 ADC_VREFL - - - - - - - - 
+      VREFL0 M8 ADC_VREFL0 - - - - - - - - 
+      VSS A3 - - - - - - - - - 
+      VSS D9 - - - - - - - - - 
+      VSS K1 - - - - - - - - - 
+      VSS M3 - - - - - - - - - 
+      VSS F12 - - - - - - - - - 
+      VSS M5 - - - - - - - - - 
+      VSS G2 - - - - - - - - - 
+      VSS D1 - - - - - - - - - 
+      VSS N11 - - - - - - - - - 
+      VSSUSB B11 USBFS0_VSSUSB - - - - - - - - 
+      XCIN H13 CGC0_XCIN - - - - - - - - 
+      XCOUT H12 CGC0_XCOUT - - - - - - - - 
+      
+  Module "CGC Driver on r_cgc"
+    Parameter Checking: Default (BSP)
+    Main Oscillator Wait Time: 2087 us (547 cycles)
+    Main Oscillator Clock Source: Crystal or Resonator
+    Subclock Drive: Standard (12.5pf)
+    Configure Subclock Drive On Reset: Enabled
+    Low Voltage Mode: Disable
+    
+  Module "ELC Driver on r_elc"
+    Parameter Checking: Default (BSP)
+    
+  Module "I/O Port Driver on r_ioport"
+    Parameter Checking: Default (BSP)
+    
+  Module "FMI Driver on r_fmi"
+    Parameter Checking: Default (BSP)
+    SSP MCU Information Symbol Name: g_fmi_data
+    Part Number Mask: 0xFE00
+    
+  Module "NetX Duo DNS Client"
+    DNS Control Type of Service: Normal
+    Socket fragmentation option: Dont fragment
+    Time to live: 128
+    Client DNS IP version: IPv4
+    Maximum number of DNS Servers in the Client server list: 5
+    Maximum DNS queries size (bytes): 512
+    Packets in DNS packet pool (units): 16
+    Maximum retries for a server: 3
+    Maximum duration to retransmit a DNS query (seconds): 64
+    Packet allocate timeout (seconds): 1
+    Client has DNS and Gateway server: Disable
+    Use application packet pool: Enable
+    Clear previous DNS queries from queue: Disable
+    Extended RR types support: Disable
+    Cache support: Disable
+    
+  Module "NetX Duo IP Instance"
+  Module "NetX Duo Common on nxd"
+  Module "NetX Duo Packet Pool Instance"
+  Module "NetX Port using Cellular Framework on sf_cellular_nsal_nx"
+    Parameter Checking: Default (BSP)
+    
+  Module "Cellular Framework on Quectel CATM1 Modem"
+    Parameter Checking: Default (BSP)
+    On-Chip Stack Support: Disabled
+    AT Command Retry Count: 5
+    
+  Module "SF Cellular Framework Common"
+    Parameter Checking: Default (BSP)
+    AT command Debug Logging: Logging Disabled
+    AT command Debug Log Function Name: sf_cellular_debug_log
+    
+  Module "Communications Framework on sf_uart_comms"
+    Parameter Checking: Default (BSP)
+    Read Input Queue Size (4-Byte Words): 64
+    
+  Module "UART Driver on r_sci_uart"
+    External RTS Operation: Disable
+    Reception: Enable
+    Transmission: Enable
+    Parameter Checking: Default (BSP)
+    
+  Module "Transfer Driver on r_dtc"
+    Parameter Checking: Default (BSP)
+    Software Start: Disabled
+    Linker section to keep DTC vector table: .ssp_dtc_vector_table
+    
+  Module "NetX Duo PPP Common"
+    Internal thread time slicing interval (ticks): TX_NO_TIME_SLICE
+    Maximum receive unit (MRU) size (bytes): 1500
+    Minimum MRU size in LCP configure request message (bytes): 1500
+    Receive serial buffer size in multiples of MRU: 2
+    User name buffer size for PAP login (bytes): 32
+    Password buffer size for PAP login (bytes): 32
+    Random value buffer size for CHAP challenge (bytes): 32
+    Hash value buffer size for CHAP challenge (bytes): 16
+    
+  Module "NetX MD5"
+  Module "NetX Duo MQTT Client"
+    Parameter Checking: Default (BSP)
+    NX Secure: Enable
+    Topic Name Max Length: 128
+    Message Max Length: 2048
+    Keepalive Timer Rate (s): 1
+    Ping Timeout Delay (s): 1
+    Socket Timeout (in timer ticks) : 0xFFFFFFFF
+    
+  Module "NetX Duo TLS Common"
+    Crypto Engine: Hardware
+    Self Signed Certificates: Disable
+    PSK Cipher Suite: Disable
+    X509 Strict Name Compare: Disable
+    X509 Extended Distinguished Names: Disable
+    Maximum RSA Modulus size (bits): 2048
+    TLS v1.0: Disable
+    TLS v1.1: Disable
+    Server Mode: Disable
+    Client Mode: Enable
+    
+  Module "NetX Duo Software Crypto"
+  Module "NetX Crypto Hardware Accelerator"
+  Module "SCE COMMON Driver on r_sce"
+  HAL
+    Instance "g_ioport I/O Port Driver on r_ioport"
+      Name [Fixed]: g_ioport
+      
+    Instance "g_elc ELC Driver on r_elc"
+      Name [Fixed]: g_elc
+      
+    Instance "g_fmi FMI Driver on r_fmi"
+      Name: g_fmi
+      
+    Instance "g_cgc CGC Driver on r_cgc"
+      Name [Fixed]: g_cgc
+      
+  Thread "Network Thread"
+    Symbol: network_thread
+    Name: Network Thread
+    Stack size (bytes): 2048
+    Priority: 6
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
+    Instance "g_dns0 NetX Duo DNS Client"
+      Name: g_dns0
+      Name of generated initialization function: dns_client_init0
+      Auto Initialization: Enable
+      
+      Instance "g_ip0 NetX Duo IP Instance"
+        Name: g_ip0
+        IPv4 Address (use commas for separation): 192,168,0,2
+        Subnet Mask (use commas for separation): 255,255,255,0
+        Default Gateway Address (use commas for seperation): 0,0,0,0
+        IPv6 Global Address (use commas for separation): 0x2001,0x0,0x0,0x0,0x0,0x0,0x0,0x1
+        IPv6 Link Local Address (use commas for separation , All zeros means use MAC address): 0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0
+        IP Helper Thread Stack Size (bytes): 2048
+        IP Helper Thread Priority: 3
+        ARP: Enable
+        ARP cache storage units: Bytes
+            ARP cache size (in storage units): 520
+        Reverse ARP: Disable
+        TCP: Enable
+        UDP: Enable
+        ICMP: Enable
+        IGMP: Enable
+        IP fragmentation: Disable
+        Name of generated initialization function: ip_init0
+        Auto Initialization: Enable
+        Link status change callback: NULL
+        
+        Instance "NetX Duo Common on nxd"
+          Name of generated initialization function: nx_common_init0
+          Auto Initialization: Enable
+          
+        Instance "g_packet_pool0 NetX Duo Packet Pool Instance"
+          Name: g_packet_pool0
+          Packet Size (bytes): 1568
+          Number of Packets in Pool: 50
+          Name of generated initialization function: packet_pool_init0
+          Auto Initialization: Enable
+          
+          Instance "NetX Duo Common on nxd"
+            Name of generated initialization function: nx_common_init0
+            Auto Initialization: Enable
+            
+        Instance "g_sf_el_nx0 NetX Port using Cellular Framework on sf_cellular_nsal_nx"
+          Name: g_sf_el_nx0
+          PPP Stack Size in Bytes: 2048
+          Name: g_nx_ppp0
+          Numerical priority of PPP Thread: 3
+          Authentication Method: None
+          Invalid Packet Handler Callback: NULL
+          Link Down Callback: NULL
+          Link UP Callback: NULL
+          PAP Login Callback: NULL
+          PAP Verify Login Callback: NULL
+          Get Challenge Values Callback: NULL
+          Get Responder Values Callback: NULL
+          Get Verification Callback: NULL
+          Local IPv4 Address (use commas for separation): 0,0,0,0
+          Peer IPv4 Address (use commas for separation): 0,0,0,0
+          
+          Instance "NetX Duo PPP Common"
+            Name: g_nxd_ppp_common0
+            
+            Instance "NetX Duo Common on nxd"
+              Name of generated initialization function: nx_common_init0
+              Auto Initialization: Enable
+              
+            Instance "NetX MD5"
+          Instance "g_sf_cellular0 Cellular Framework on Quectel CATM1 Modem"
+            Name: g_sf_cellular0
+            SIM Pin (Used to Unlock SIM): 1111
+            SIM PUK Pin (Used to Unlock SIM): 12345678
+            Number of Preferred Operators: 0
+            Preferred operator 1 name: 40422
+            Preferred Operator 1 Name Format: Numeric
+            Preferred operator 2 name: 40424
+            Preferred Operator 2 Name Format: Numeric
+            Preferred operator 3 name: 40422
+            Preferred Operator 3 Name Format: Numeric
+            Preferred operator 4 name: 40424
+            Preferred Operator 4 Name Format: Numeric
+            Preferred operator 5 name: 40422
+            Preferred Operator 5 Name Format: Numeric
+            Operator Select Mode: Auto
+            Operator Name (Manual Mode Selection): 40422
+            Operator Name Format (Manual Mode Selection): Numeric
+            Time Zone Update Policy: Enabled
+            Provisioning Callback: celr_prov_callback
+            Circular queue Size (bytes): 256
+            Internal thread priority: 5
+            Cellular Module Reset IO Pin: IOPORT_PORT_06_PIN_02
+            Cellular Module Reset Pin State: Active High
+            Network Scan Sequence: Default (LTE Cat.M1->LTE Cat.NB1->GSM)
+            
+            Instance "SF Cellular Framework Common"
+            Instance "g_sf_comms0 Communications Framework on sf_uart_comms"
+              Name: g_sf_comms0
+              Name of generated initialization function: sf_comms_init0
+              Auto Initialization: Enable
+              
+              Instance "g_uart0 UART Driver on r_sci_uart"
+                Name: g_uart0
+                Channel: 7
+                Baud Rate: 115200
+                Data Bits: 8bits
+                Parity: None
+                Stop Bits: 1bit
+                CTS/RTS Selection: RTS (CTS is disabled)
+                Name of UART callback function to be defined by user: NULL
+                Name of UART callback function for the RTS external pin control to be defined by user: NULL
+                Clock Source: Internal Clock
+                Baudrate Clock Output from SCK pin: Disable
+                Start bit detection: Falling Edge
+                Noise Cancel: Disable
+                Bit Rate Modulation Enable: Enable
+                Receive FIFO Trigger Level: Max
+                Receive Interrupt Priority: Priority 12
+                Transmit Interrupt Priority: Priority 12
+                Transmit End Interrupt Priority: Priority 12
+                Error Interrupt Priority: Priority 12
+                Baudrate Percent Error: 2.0
+                
+                Instance "g_transfer0 Transfer Driver on r_dtc SCI7 TXI"
+                  Name: g_transfer0
+                  Mode: Normal
+                  Transfer Size: 1 Byte
+                  Destination Address Mode: Fixed
+                  Source Address Mode: Incremented
+                  Repeat Area (Unused in Normal Mode): Source
+                  Interrupt Frequency: After all transfers have completed
+                  Destination Pointer: NULL
+                  Source Pointer: NULL
+                  Number of Transfers: 0
+                  Number of Blocks (Valid only in Block Mode): 0
+                  Activation Source (Must enable IRQ): SCI7 TXI
+                  Auto Enable: False
+                  Callback (Only valid with Software start): NULL
+                  ELC Software Event Interrupt Priority: Disabled
+                  
+          Instance "g_packet_pool0 NetX Duo Packet Pool Instance"
+            Name: g_packet_pool0
+            Packet Size (bytes): 1568
+            Number of Packets in Pool: 50
+            Name of generated initialization function: packet_pool_init0
+            Auto Initialization: Enable
+            
+            Instance "NetX Duo Common on nxd"
+              Name of generated initialization function: nx_common_init0
+              Auto Initialization: Enable
+              
+    Instance "g_mqtt_client0 NetX Duo MQTT Client"
+      Name: g_mqtt_client0
+      Client ID Callback: mqtt_client_id_callback
+      Client ID Max Length: 256
+      Client Thread Stack Size: 4096
+      Number of Messages to be stored in memory: 10
+      Client thread priority: 2
+      Name of generated initialization function: mqtt_client_init0
+      Auto Initialization: Enable
+      
+      Instance "g_ip0 NetX Duo IP Instance"
+        Name: g_ip0
+        IPv4 Address (use commas for separation): 192,168,0,2
+        Subnet Mask (use commas for separation): 255,255,255,0
+        Default Gateway Address (use commas for seperation): 0,0,0,0
+        IPv6 Global Address (use commas for separation): 0x2001,0x0,0x0,0x0,0x0,0x0,0x0,0x1
+        IPv6 Link Local Address (use commas for separation , All zeros means use MAC address): 0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0
+        IP Helper Thread Stack Size (bytes): 2048
+        IP Helper Thread Priority: 3
+        ARP: Enable
+        ARP cache storage units: Bytes
+            ARP cache size (in storage units): 520
+        Reverse ARP: Disable
+        TCP: Enable
+        UDP: Enable
+        ICMP: Enable
+        IGMP: Enable
+        IP fragmentation: Disable
+        Name of generated initialization function: ip_init0
+        Auto Initialization: Enable
+        Link status change callback: NULL
+        
+        Instance "NetX Duo Common on nxd"
+          Name of generated initialization function: nx_common_init0
+          Auto Initialization: Enable
+          
+        Instance "g_packet_pool0 NetX Duo Packet Pool Instance"
+          Name: g_packet_pool0
+          Packet Size (bytes): 1568
+          Number of Packets in Pool: 50
+          Name of generated initialization function: packet_pool_init0
+          Auto Initialization: Enable
+          
+          Instance "NetX Duo Common on nxd"
+            Name of generated initialization function: nx_common_init0
+            Auto Initialization: Enable
+            
+        Instance "g_sf_el_nx0 NetX Port using Cellular Framework on sf_cellular_nsal_nx"
+          Name: g_sf_el_nx0
+          PPP Stack Size in Bytes: 2048
+          Name: g_nx_ppp0
+          Numerical priority of PPP Thread: 3
+          Authentication Method: None
+          Invalid Packet Handler Callback: NULL
+          Link Down Callback: NULL
+          Link UP Callback: NULL
+          PAP Login Callback: NULL
+          PAP Verify Login Callback: NULL
+          Get Challenge Values Callback: NULL
+          Get Responder Values Callback: NULL
+          Get Verification Callback: NULL
+          Local IPv4 Address (use commas for separation): 0,0,0,0
+          Peer IPv4 Address (use commas for separation): 0,0,0,0
+          
+          Instance "NetX Duo PPP Common"
+            Name: g_nxd_ppp_common0
+            
+            Instance "NetX Duo Common on nxd"
+              Name of generated initialization function: nx_common_init0
+              Auto Initialization: Enable
+              
+            Instance "NetX MD5"
+          Instance "g_sf_cellular0 Cellular Framework on Quectel CATM1 Modem"
+            Name: g_sf_cellular0
+            SIM Pin (Used to Unlock SIM): 1111
+            SIM PUK Pin (Used to Unlock SIM): 12345678
+            Number of Preferred Operators: 0
+            Preferred operator 1 name: 40422
+            Preferred Operator 1 Name Format: Numeric
+            Preferred operator 2 name: 40424
+            Preferred Operator 2 Name Format: Numeric
+            Preferred operator 3 name: 40422
+            Preferred Operator 3 Name Format: Numeric
+            Preferred operator 4 name: 40424
+            Preferred Operator 4 Name Format: Numeric
+            Preferred operator 5 name: 40422
+            Preferred Operator 5 Name Format: Numeric
+            Operator Select Mode: Auto
+            Operator Name (Manual Mode Selection): 40422
+            Operator Name Format (Manual Mode Selection): Numeric
+            Time Zone Update Policy: Enabled
+            Provisioning Callback: celr_prov_callback
+            Circular queue Size (bytes): 256
+            Internal thread priority: 5
+            Cellular Module Reset IO Pin: IOPORT_PORT_06_PIN_02
+            Cellular Module Reset Pin State: Active High
+            Network Scan Sequence: Default (LTE Cat.M1->LTE Cat.NB1->GSM)
+            
+            Instance "SF Cellular Framework Common"
+            Instance "g_sf_comms0 Communications Framework on sf_uart_comms"
+              Name: g_sf_comms0
+              Name of generated initialization function: sf_comms_init0
+              Auto Initialization: Enable
+              
+              Instance "g_uart0 UART Driver on r_sci_uart"
+                Name: g_uart0
+                Channel: 7
+                Baud Rate: 115200
+                Data Bits: 8bits
+                Parity: None
+                Stop Bits: 1bit
+                CTS/RTS Selection: RTS (CTS is disabled)
+                Name of UART callback function to be defined by user: NULL
+                Name of UART callback function for the RTS external pin control to be defined by user: NULL
+                Clock Source: Internal Clock
+                Baudrate Clock Output from SCK pin: Disable
+                Start bit detection: Falling Edge
+                Noise Cancel: Disable
+                Bit Rate Modulation Enable: Enable
+                Receive FIFO Trigger Level: Max
+                Receive Interrupt Priority: Priority 12
+                Transmit Interrupt Priority: Priority 12
+                Transmit End Interrupt Priority: Priority 12
+                Error Interrupt Priority: Priority 12
+                Baudrate Percent Error: 2.0
+                
+                Instance "g_transfer0 Transfer Driver on r_dtc SCI7 TXI"
+                  Name: g_transfer0
+                  Mode: Normal
+                  Transfer Size: 1 Byte
+                  Destination Address Mode: Fixed
+                  Source Address Mode: Incremented
+                  Repeat Area (Unused in Normal Mode): Source
+                  Interrupt Frequency: After all transfers have completed
+                  Destination Pointer: NULL
+                  Source Pointer: NULL
+                  Number of Transfers: 0
+                  Number of Blocks (Valid only in Block Mode): 0
+                  Activation Source (Must enable IRQ): SCI7 TXI
+                  Auto Enable: False
+                  Callback (Only valid with Software start): NULL
+                  ELC Software Event Interrupt Priority: Disabled
+                  
+          Instance "g_packet_pool0 NetX Duo Packet Pool Instance"
+            Name: g_packet_pool0
+            Packet Size (bytes): 1568
+            Number of Packets in Pool: 50
+            Name of generated initialization function: packet_pool_init0
+            Auto Initialization: Enable
+            
+            Instance "NetX Duo Common on nxd"
+              Name of generated initialization function: nx_common_init0
+              Auto Initialization: Enable
+              
+      Instance "g_packet_pool0 NetX Duo Packet Pool Instance"
+        Name: g_packet_pool0
+        Packet Size (bytes): 1568
+        Number of Packets in Pool: 50
+        Name of generated initialization function: packet_pool_init0
+        Auto Initialization: Enable
+        
+        Instance "NetX Duo Common on nxd"
+          Name of generated initialization function: nx_common_init0
+          Auto Initialization: Enable
+          
+      Instance " NetX Duo TLS Common"
+        Name of generated initialization function: nx_secure_common_init
+        Auto Initialization: Enable
+        
+        Instance "NetX Duo Common on nxd"
+          Name of generated initialization function: nx_common_init0
+          Auto Initialization: Enable
+          
+        Instance "g_crypto_generic NetX Duo Software Crypto"
+          Name: g_crypto_generic
+          
+          Instance "g_sf_el_nx_crypto NetX Crypto Hardware Accelerator"
+            Name: g_sf_el_nx_crypto
+            
+            Instance "g_sce_0 SCE COMMON Driver on r_sce"
+              Name: g_sce_0
+              Endian flag: CRYPTO_WORD_ENDIAN_BIG
+              : 
+              Interfaces which can be accessed through InterfaceGet API.: 
+              AES Plain-text ECB 128-bit: Enable
+              AES Plain-text CBC 128-bit: Enable
+              AES Plain-text CTR 128-bit: Enable
+              AES Plain-text GCM 128-bit: Enable
+              AES Plain-text XTS 128-bit: Enable
+              AES Plain-text ECB 192-bit: Enable
+              AES Plain-text CBC 192-bit: Enable
+              AES Plain-text CTR 192-bit: Enable
+              AES Plain-text GCM 192-bit: Enable
+              AES Plain-text ECB 256-bit: Enable
+              AES Plain-text CBC 256-bit: Enable
+              AES Plain-text CTR 256-bit: Enable
+              AES Plain-text GCM 256-bit: Enable
+              AES Plain-text XTS 256-bit: Enable
+              AES Wrapped ECB 128-bit: Enable
+              AES Wrapped CBC 128-bit: Enable
+              AES Wrapped CTR 128-bit: Enable
+              AES Wrapped GCM 128-bit: Enable
+              AES Wrapped XTS 128-bit: Enable
+              AES Wrapped ECB 192-bit: Enable
+              AES Wrapped CBC 192-bit: Enable
+              AES Wrapped CTR 192-bit: Enable
+              AES Wrapped GCM 192-bit: Enable
+              AES Wrapped ECB 256-bit: Enable
+              AES Wrapped CBC 256-bit: Enable
+              AES Wrapped CTR 256-bit: Enable
+              AES Wrapped GCM 256-bit: Enable
+              AES Wrapped XTS 256-bit: Enable
+              RSA Plain-text 1024-bit: Enable
+              RSA Plain-text 2048-bit: Enable
+              RSA Wrapped 1024-bit: Enable
+              RSA Wrapped 2048-bit: Enable
+              ECC Plain-text 192-bit: Enable
+              ECC Plain-text 256-bit: Enable
+              ECC Wrapped 192-bit: Enable
+              ECC Wrapped 256-bit: Enable
+              HASH SHA1: Enable
+              HASH SHA224: Enable
+              HASH SHA256: Enable
+              HASH MD5: Enable
+              True Random Number Generator: Enable
+              
+    Instance "g_uart_gps UART Driver on r_sci_uart"
+      Name: g_uart_gps
+      Channel: 8
+      Baud Rate: 115200
+      Data Bits: 8bits
+      Parity: None
+      Stop Bits: 1bit
+      CTS/RTS Selection: RTS (CTS is disabled)
+      Name of UART callback function to be defined by user: user_uart_callback
+      Name of UART callback function for the RTS external pin control to be defined by user: NULL
+      Clock Source: Internal Clock
+      Baudrate Clock Output from SCK pin: Disable
+      Start bit detection: Falling Edge
+      Noise Cancel: Disable
+      Bit Rate Modulation Enable: Enable
+      Receive FIFO Trigger Level: Max
+      Receive Interrupt Priority: Priority 12
+      Transmit Interrupt Priority: Priority 12
+      Transmit End Interrupt Priority: Priority 12
+      Error Interrupt Priority: Disabled
+      Baudrate Percent Error: 2.0
+      
+      Instance "g_transfer1 Transfer Driver on r_dtc SCI8 TXI"
+        Name: g_transfer1
+        Mode: Normal
+        Transfer Size: 1 Byte
+        Destination Address Mode: Fixed
+        Source Address Mode: Incremented
+        Repeat Area (Unused in Normal Mode): Source
+        Interrupt Frequency: After all transfers have completed
+        Destination Pointer: NULL
+        Source Pointer: NULL
+        Number of Transfers: 0
+        Number of Blocks (Valid only in Block Mode): 0
+        Activation Source (Must enable IRQ): SCI8 TXI
+        Auto Enable: False
+        Callback (Only valid with Software start): NULL
+        ELC Software Event Interrupt Priority: Disabled
+        
+    Object "g_gps_queue Queue"
+      Name: New Queue
+      Symbol: g_gps_queue
+      Message Size (Words): 1
+      Queue Size (Bytes): 512
+      
+  Messaging
